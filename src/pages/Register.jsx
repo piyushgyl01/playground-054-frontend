@@ -1,7 +1,5 @@
-import React from 'react'
+import AuthForm from "../components/AuthForm";
 
 export default function Register() {
-  return (
-    <div>Register</div>
-  )
+  return <AuthForm mode="register" />;
 }
