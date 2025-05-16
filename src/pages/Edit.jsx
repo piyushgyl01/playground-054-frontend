@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { FaTimes } from "react-icons/fa";
 import { useAuth } from "../contexts/authContext";
 
 export default function Edit() {
