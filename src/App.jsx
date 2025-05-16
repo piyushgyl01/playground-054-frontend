@@ -12,29 +12,29 @@ import Settings from "./pages/Settings";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 import PrivateRoute from "./components/PrivateRoute";
-// import { AuthProvider } from "./contexts/authContext";
+import { AuthProvider } from "./contexts/authContext";
 
 export default function App() {
   return (
-    // <AuthProvider>
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/article/:id" element={<Article />} />
-        <Route element={<PrivateRoute />}>
-          <Route path="/editor" element={<Edit />} />
-          <Route path="/editor/:id" element={<Edit />} />
-          <Route path="/post" element={<Post />} />
-        </Route>
-        <Route path="/settings" element={<Settings />} />
-        <Route path="/profile/:username" element={<Profile />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <Footer />
-    </Router>
-    // </AuthProvider>
+    <AuthProvider>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/article/:id" element={<Article />} />
+          <Route element={<PrivateRoute />}>
+            <Route path="/editor" element={<Edit />} />
+            <Route path="/editor/:id" element={<Edit />} />
+            <Route path="/post" element={<Post />} />
+          </Route>
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/profile/:username" element={<Profile />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Footer />
+      </Router>
+    </AuthProvider>
   );
 }
